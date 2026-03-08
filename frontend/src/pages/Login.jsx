@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
-  const [form, setForm]   = useState({ email: '', password: '' });
+  const [form, setForm]   = useState({ email: 'https://spotify-clone-backend.onrender.com/api/auth/login', password: '' });
   const [error, setError] = useState('');
   const { login }         = useAuth();
   const navigate          = useNavigate();
@@ -12,7 +12,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', form);
+      const { data } = await axios.post('', form);
       login(data.user, data.token);
       navigate('/');
     } catch (err) {

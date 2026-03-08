@@ -9,7 +9,7 @@ export default function Home() {
   const { playSong }        = usePlayer();
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/songs')
+    axios.get('https://spotify-clone-backend.onrender.com/api/songs')
       .then(res => {
         setSongs(res.data);
         setLoading(false);

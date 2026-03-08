@@ -16,7 +16,7 @@ export default function Search() {
     setLoading(true);
     setSearched(true);
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/songs/search?q=${query}`);
+      const { data } = await axios.get(`https://spotify-clone-backend.onrender.com/api/songs/search`);
       setSongs(data);
     } catch (err) {
       console.error(err);
