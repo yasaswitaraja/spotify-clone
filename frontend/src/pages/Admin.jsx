@@ -31,8 +31,8 @@ export default function Admin() {
     formData.append('audioFile', audioFile);
 
     try {
-      await axios.post('https://spotify-clone-backend.onrender.com/api/songs', formData, {
-        headers: {
+      await axios.post('https://spotify-clone-b3pm.onrender.com/api/songs', formData, {
+      headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
         }

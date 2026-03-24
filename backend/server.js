@@ -11,8 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174'],
-  credentials: true
+origin: ['http://localhost:5173', 'http://localhost:5174', 'https://spotify-clone-frontend.vercel.app'],  credentials: true
 }));
 app.use(express.json());
 

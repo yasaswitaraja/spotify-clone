@@ -10,7 +10,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://spotify-clone-backend.onrender.com/api/auth/signup', form);
+      await axios.post('https://spotify-clone-b3pm.onrender.com/api/auth/signup', form);
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Signup failed');

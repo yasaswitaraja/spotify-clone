@@ -12,7 +12,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('', form);
+      const { data } = await axios.post('https://spotify-clone-b3pm.onrender.com/api/auth/login', form);
       login(data.user, data.token);
       navigate('/');
     } catch (err) {
