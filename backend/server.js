@@ -11,17 +11,23 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-origin: ['http://localhost:5173', 'http://localhost:5174', 'https://spotify-clone-frontend.vercel.app'],  credentials: true
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'https://spotify-clone-rho-nine-44.vercel.app'
+  ],
+  credentials: true
 }));
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ MongoDB Connected'))
-  .catch(err => console.log('❌ MongoDB Error:', err));
+  .then(() => console.log(' MongoDB Connected'))
+  .catch(err => console.log(' MongoDB Error:', err));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/songs', songRoutes);
 app.use('/api/albums', albumRoutes);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
